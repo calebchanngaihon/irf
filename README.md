@@ -1,11 +1,11 @@
-# The Institutional Agency Framework
+# The Institutional Readiness Framework (IRF)
 ## An Operational Playbook for School Leaders
 
 When a strategic initiative, curriculum change, or school policy fails to take root, leaders often misdiagnose the problem. We assume a lack of teacher buy-in when the real issue is a lack of time. We mandate compliance when the real issue is a lack of structural safety.
 
 To execute any strategy successfully, school systems must manage three independent, interacting forces: **Ability (Can)**, **Desire (Want)**, and **Obligation (Must)**. When an initiative stalls, it is because at least one of these forces has dropped to zero.
 
-This repository contains the interactive diagnostic and planning engine for the Institutional Agency Framework, enabling school leaders and system designers to map their initiatives, diagnose failure modes, and plan precise operational rollout sequences.
+This repository contains the interactive diagnostic and planning engine for the Institutional Readiness Framework (IRF), enabling school leaders and system designers to map their initiatives, diagnose failure modes, and plan precise operational rollout sequences.
 
 ---
 
