@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <style>
+    .accent-glow {
+      filter: drop-shadow(0px 2px 4px rgba(255, 180, 123, 0.4));
+    }
+  </style>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb47b" />
+      <stop offset="100%" stop-color="#e59e66" />
+    </linearGradient>
+  </defs>
+  <!-- Outer glowing triangle representing the vectors -->
+  <polygon points="16,5 27,24 5,24" stroke="url(#grad)" stroke-width="3" stroke-linejoin="round" class="accent-glow" />
+  <!-- Three vertex points representing Ability, Desire, Obligation -->
+  <circle cx="16" cy="5" r="3.5" fill="#ffffff" />
+  <circle cx="27" cy="24" r="3.5" fill="#ffb47b" />
+  <circle cx="5" cy="24" r="3.5" fill="#ffb47b" />
+  <!-- Central node of alignment (Peak Agency) -->
+  <circle cx="16" cy="15" r="2" fill="#ffffff" opacity="0.9" />
+  <line x1="16" y1="15" x2="16" y2="5" stroke="#ffffff" stroke-width="1" stroke-dasharray="1,1" opacity="0.7" />
+  <line x1="16" y1="15" x2="27" y2="24" stroke="#ffb47b" stroke-width="1" stroke-dasharray="1,1" opacity="0.7" />
+  <line x1="16" y1="15" x2="5" y2="24" stroke="#ffb47b" stroke-width="1" stroke-dasharray="1,1" opacity="0.7" />
+</svg>
