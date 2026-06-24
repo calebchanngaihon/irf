@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Readiness Framework Playbook</title>
+    <meta name="description" content="An interactive playbook for school leaders and system designers. Score Ability, Desire, and Obligation across six dimensions, see your implementation pattern, and get a sequenced path from inertia to peak agency.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Animated Background / Grid -->
+    <div class="bg-mesh">
+        <div class="bg-glow"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar fade-in">
+        <div class="nav-logo">IRF <span class="text-accent">•</span></div>
+        <div class="nav-links">
+            <a href="#diagnostic-engine">Diagnostic Engine</a>
+            <a href="#scenarios">Scenarios</a>
+        </div>
+        <a href="#diagnostic-engine" class="btn btn-primary">Try Engine →</a>
+    </nav>
+
+    <div class="container">
+        <!-- Header / Hero Section -->
+        <header class="hero fade-in">
+            <div class="hero-content">
+                <span class="tagline">• PROLOG • INSTITUTIONAL READINESS • PLAYBOOK</span>
+                <h1 class="hero-title">Build the playbook before you build the <span class="text-accent">policy.</span></h1>
+                
+                <div class="lede-container">
+                    <p class="lede">When a school initiative stalls, we rush to blame "teacher resistance" or "lack of buy-in." In reality, most failures are structural. If teachers don't have time, don't see the point, or don't feel a real obligation, no amount of motivational speeches or compliance tracking will make the work stick.</p>
+                    <p class="lede-secondary">↳ The Institutional Readiness Framework helps leaders diagnose Ability, Desire, and Obligation.</p>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#scenarios" class="btn btn-primary">Load a Scenario →</a>
+                    <a href="#diagnostic-engine" class="btn btn-outline">Explore the framework ↓</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Common Misdiagnoses -->
+        <section class="section fade-in mt-8">
+            <div class="grid grid-3">
+                <div class="card glass-card">
+                    <div class="card-icon text-accent">01</div>
+                    <h3>"No buy-in" vs. no bandwidth</h3>
+                    <p>Staff nod along in meetings, but nothing changes in classrooms. The cause is not cynicism; it's that the timetable and admin demands leave no protected time to plan or practice the new work.</p>
+                </div>
+                <div class="card glass-card">
+                    <div class="card-icon text-accent">02</div>
+                    <h3>"They're resisting" vs. identity friction</h3>
+                    <p>A department agrees with the principle of a new strategy but quietly keeps doing what it has always done. The belief that the practice "works" is present, but it doesn't feel like who they are as professionals.</p>
+                </div>
+                <div class="card glass-card">
+                    <div class="card-icon text-accent">03</div>
+                    <h3>"We've trained them" vs. no obligation</h3>
+                    <p>A handful of teachers use a new tool brilliantly, while others ignore it. Skill and desire exist, but there is no clear, shared standard that says, "Every student in this school is entitled to this."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenarios -->
+        <section class="section fade-in" id="scenarios">
+            <span class="tagline">• DIAGNOSE • EXPLORE THE SCENARIOS</span>
+            <h2 class="section-title">Scenario Library</h2>
+            <p class="section-subtitle">Select a scenario to load its scores, see the matrix configuration, and explore tailored interventions.</p>
+            <div class="scenario-buttons">
+                <button class="btn btn-primary btn-scenario" data-scenario="a">Continuous Feedback →</button>
+                <button class="btn btn-primary btn-scenario" data-scenario="b">Cross-Curricular Literacy →</button>
+                <button class="btn btn-primary btn-scenario" data-scenario="c">Safeguarding Tracking →</button>
+                <button class="btn btn-outline btn-scenario" data-scenario="reset">Reset to Zero</button>
+            </div>
+        </section>
+
+        <!-- Interactive Diagnostic Engine -->
+        <section class="section diagnostic-section fade-in" id="diagnostic-engine">
+            <div class="engine-layout">
+                <!-- Sliders Panel -->
+                <div class="sliders-panel glass-panel">
+                    <!-- Ability -->
+                    <div class="force-group ability-group">
+                        <h3 class="force-title">Ability (Can) <span class="force-status" id="status-ability">Missing</span></h3>
+                        
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <label for="competence" class="label-with-theory">
+                                    A1 · Competence
+                                    <span class="theory-badge-trigger" data-tooltip="Elmore" aria-label="Theory Source">📖</span>
+                                    <span class="theory-tooltip">
+                                        <strong>Richard Elmore (Instructional Core):</strong> Schools do not improve through advice. They improve through building capacity in the core: teacher skill, student engagement, and rigorous content.
+                                    </span>
+                                </label>
+                                <span class="slider-value" id="val-competence">0</span>
+                            </div>
+                            <input type="range" id="competence" min="0" max="5" step="1" value="0" class="slider slider-ability" aria-label="Competence">
+                            <div class="progress-track"><div class="progress-fill fill-ability" id="fill-competence" style="width: 0%"></div></div>
+                            <p class="slider-helper">0 = unfamiliar; 5 = repeated modelling & coached rehearsal.</p>
+                        </div>
+                        
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <label for="bandwidth" class="label-with-theory">
+                                    A2 · Bandwidth
+                                    <span class="theory-badge-trigger" data-tooltip="Sweller" aria-label="Theory Source">📖</span>
+                                    <span class="theory-tooltip">
+                                        <strong>John Sweller (Cognitive Load Theory):</strong> Timetable and admin noise act as extraneous cognitive load. You cannot add to teachers' tasks without actively subtracting others.
+                                    </span>
+                                </label>
+                                <span class="slider-value" id="val-bandwidth">0</span>
+                            </div>
+                            <input type="range" id="bandwidth" min="0" max="5" step="1" value="0" class="slider slider-ability" aria-label="Bandwidth">
+                            <div class="progress-track"><div class="progress-fill fill-ability" id="fill-bandwidth" style="width: 0%"></div></div>
+                            <p class="slider-helper">0 = no room in timetable; 5 = protected time & lean admin.</p>
+                        </div>
+                    </div>
+
+                    <!-- Desire -->
+                    <div class="force-group desire-group">
+                        <h3 class="force-title">Desire (Want) <span class="force-status" id="status-desire">Missing</span></h3>
+                        
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <label for="epistemic" class="label-with-theory">
+                                    D1 · Belief in Impact
+                                    <span class="theory-badge-trigger" data-tooltip="Guskey" aria-label="Theory Source">📖</span>
+                                    <span class="theory-tooltip">
+                                        <strong>Thomas Guskey (Model of Teacher Change):</strong> Buy-in is a trailing indicator. Belief follows the observation of positive student outcomes. Experience success first; desire follows.
+                                    </span>
+                                </label>
+                                <span class="slider-value" id="val-epistemic">0</span>
+                            </div>
+                            <input type="range" id="epistemic" min="0" max="5" step="1" value="0" class="slider slider-desire" aria-label="Belief in Impact">
+                            <div class="progress-track"><div class="progress-fill fill-desire" id="fill-epistemic" style="width: 0%"></div></div>
+                            <p class="slider-helper">0 = unconvinced; 5 = strong local evidence of impact.</p>
+                        </div>
+                        
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <label for="identity" class="label-with-theory">
+                                    D2 · Cultural Fit
+                                    <span class="theory-badge-trigger" data-tooltip="DeciRyan" aria-label="Theory Source">📖</span>
+                                    <span class="theory-tooltip">
+                                        <strong>Deci & Ryan (Self-Determination Theory):</strong> Sustainable motivation relies on intrinsic factors: Autonomy, Competence, and Relatedness. Mandates that threaten autonomy crush desire.
+                                    </span>
+                                </label>
+                                <span class="slider-value" id="val-identity">0</span>
+                            </div>
+                            <input type="range" id="identity" min="0" max="5" step="1" value="0" class="slider slider-desire" aria-label="Cultural Fit">
+                            <div class="progress-track"><div class="progress-fill fill-desire" id="fill-identity" style="width: 0%"></div></div>
+                            <p class="slider-helper">0 = feels alien; 5 = natural extension of how the team teaches.</p>
+                        </div>
+                    </div>
+
+                    <!-- Obligation -->
+                    <div class="force-group obligation-group">
+                        <h3 class="force-title">Obligation (Must) <span class="force-status" id="status-obligation">Missing</span></h3>
+                        
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <label for="requirement" class="label-with-theory">
+                                    O1 · Institutional requirement
+                                    <span class="theory-badge-trigger" data-tooltip="Robinson" aria-label="Theory Source">📖</span>
+                                    <span class="theory-tooltip">
+                                        <strong>Viviane Robinson (Student-Centered Leadership):</strong> Effective leaders bypass personal preferences by anchoring requirements in student entitlements and equity.
+                                    </span>
+                                </label>
+                                <span class="slider-value" id="val-requirement">0</span>
+                            </div>
+                            <input type="range" id="requirement" min="0" max="5" step="1" value="0" class="slider slider-obligation" aria-label="Institutional Requirement">
+                            <div class="progress-track"><div class="progress-fill fill-obligation" id="fill-requirement" style="width: 0%"></div></div>
+                            <p class="slider-helper">0 = vague/optional; 5 = clearly articulated in policy.</p>
+                        </div>
+                        
+                        <div class="slider-container">
+                            <div class="slider-header">
+                                <label for="commitment" class="label-with-theory">
+                                    O2 · Professional commitment
+                                    <span class="theory-badge-trigger" data-tooltip="DuFour" aria-label="Theory Source">📖</span>
+                                    <span class="theory-tooltip">
+                                        <strong>Richard DuFour (PLC Framework):</strong> Obligation isn't policy mandates; it's a shared professional promise—collective responsibility—to ensure student learning.
+                                    </span>
+                                </label>
+                                <span class="slider-value" id="val-commitment">0</span>
+                            </div>
+                            <input type="range" id="commitment" min="0" max="5" step="1" value="0" class="slider slider-obligation" aria-label="Professional Commitment">
+                            <div class="progress-track"><div class="progress-fill fill-obligation" id="fill-commitment" style="width: 0%"></div></div>
+                            <p class="slider-helper">0 = one more task; 5 = collective duty to students.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radar & Results Panel -->
+                <div class="results-panel">
+                    <div class="radar-container glass-panel">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                    
+                    <div class="diagnosis-card glass-panel" id="diagnosis-card">
+                        <div class="diagnosis-header">
+                            <h3 id="diag-state">Institutional Inertia</h3>
+                            <span class="coordinate" id="diag-coord">[0, 0, 0]</span>
+                        </div>
+                        <div class="gap-alert" id="diag-gap-alert">
+                            <strong>Primary Gap:</strong> <span id="diag-gap">Ability, Desire, Obligation</span>
+                        </div>
+                        <div class="diagnosis-body">
+                            <p id="diag-reality">None of the forces are strong enough to move the initiative. The culture defaults to maintenance and drift. New ideas remain talk, not practice.</p>
+                        </div>
+                        <div class="next-move-box">
+                            <h4 class="next-move-title">Recommended Next Move</h4>
+                            <p id="diag-next-move">Begin with small structural shifts (Step 1), then gradually build desire and skill before formalising any obligation.</p>
+                        </div>
+                        <!-- Expert Advisor Mode -->
+                        <div class="expert-advisor-box" id="expert-advisor">
+                            <!-- Dynamically populated via JS -->
+                        </div>
+                        <div class="community-cta mt-4" style="margin-top: 1.5rem;">
+                            <a href="mailto:calebchanngaihon@gmail.com?subject=Framework Results" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: rgba(255,255,255,0.1); color: var(--text-secondary);">Share Your Results: How do you solve this?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vectors & Dimensions Detailed / 8 States Reference (Moved Up) -->
+        <section class="section fade-in">
+            <span class="tagline">• REFERENCE • MATURITY MODEL</span>
+            <h2 class="section-title">The Eight Implementation States</h2>
+            <div class="states-grid">
+                <!-- State Cards rendered via JS or hardcoded -->
+                <div class="state-card" data-state="[1,1,1]">
+                    <div class="state-header">
+                        <span class="state-name">Peak Agency</span>
+                        <span class="state-coord">[1, 1, 1]</span>
+                    </div>
+                    <p class="state-desc">Organic, sustainable, high-equity institutional practice. The initiative is woven into everyday teaching.</p>
+                </div>
+                <div class="state-card" data-state="[1,0,1]">
+                    <div class="state-header">
+                        <span class="state-name">Surface Compliance</span>
+                        <span class="state-coord">[1, 0, 1]</span>
+                    </div>
+                    <p class="state-desc">Teachers comply under surveillance, but the practice disappears when monitoring fades.</p>
+                </div>
+                <div class="state-card" data-state="[0,1,1]">
+                    <div class="state-header">
+                        <span class="state-name">Capacity Deficit</span>
+                        <span class="state-coord">[0, 1, 1]</span>
+                    </div>
+                    <p class="state-desc">Staff care and feel obligated, but lack time or skill. High-effort, chaotic, and stressful.</p>
+                </div>
+                <div class="state-card" data-state="[1,1,0]">
+                    <div class="state-header">
+                        <span class="state-name">Isolated Practice</span>
+                        <span class="state-coord">[1, 1, 0]</span>
+                    </div>
+                    <p class="state-desc">Good practice exists in pockets, creating an equity lottery for students.</p>
+                </div>
+                <div class="state-card" data-state="[1,0,0]">
+                    <div class="state-header">
+                        <span class="state-name">Unused Infrastructure</span>
+                        <span class="state-coord">[1, 0, 0]</span>
+                    </div>
+                    <p class="state-desc">Tools or structures sit idle. Capacity exists, but no desire or obligation.</p>
+                </div>
+                <div class="state-card" data-state="[0,1,0]">
+                    <div class="state-header">
+                        <span class="state-name">Blocked Initiative</span>
+                        <span class="state-coord">[0, 1, 0]</span>
+                    </div>
+                    <p class="state-desc">Teachers want to move, but structures and expectations are too rigid.</p>
+                </div>
+                <div class="state-card" data-state="[0,0,1]">
+                    <div class="state-header">
+                        <span class="state-name">Forced Compliance</span>
+                        <span class="state-coord">[0, 0, 1]</span>
+                    </div>
+                    <p class="state-desc">Mandates without ability or desire. Low quality, high anxiety.</p>
+                </div>
+                <div class="state-card" data-state="[0,0,0]">
+                    <div class="state-header">
+                        <span class="state-name">Institutional Inertia</span>
+                        <span class="state-coord">[0, 0, 0]</span>
+                    </div>
+                    <p class="state-desc">None of the forces are strong enough. Culture defaults to maintenance and drift.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Four-Step Rollout -->
+        <section class="section fade-in">
+            <span class="tagline">• ACTION PLAN • SEQUENCED PATH</span>
+            <h2 class="section-title">Operational Rollout</h2>
+            <p class="section-subtitle">From inertia to peak agency: a four-step rollout.</p>
+            
+            <div class="rollout-steps">
+                <div class="step-card glass-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Clear the Bandwidth <span class="step-owner">(Management)</span></h3>
+                        <p>Before announcing major change, quietly adjust structures. Re-engineer timetables, meeting agendas, and admin workflows to create protected time for planning and rehearsal. Apply a "one-in, one-out" rule for new requirements so staff regain real capacity.</p>
+                        
+                        <div class="theory-anchor">
+                            <button class="theory-anchor-btn" aria-expanded="false">📖 Anchored in Sweller's Cognitive Load Theory</button>
+                            <div class="theory-anchor-content">
+                                <p><strong>John Sweller's Cognitive Load Theory</strong> shows that learning and enacting a new practice places heavy cognitive load on teachers. If their workday is saturated with administrative tasks, they suffer from cognitive overload. Leaders must remove administrative noise to free up mental working memory for instructional change.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-card glass-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Build the Desire <span class="step-owner">(Leadership)</span></h3>
+                        <p>With bandwidth secured, narrate a clear, evidence-based "why." Use local student data and classroom examples to show impact. Distinguish epistemic belief ("Does this work?") from identity alignment ("Is this who we are?"), and give departments autonomy to adapt the method while protecting student outcomes.</p>
+                        
+                        <div class="theory-anchor">
+                            <button class="theory-anchor-btn" aria-expanded="false">📖 Anchored in Guskey's Model & Self-Determination Theory</button>
+                            <div class="theory-anchor-content">
+                                <p><strong>Thomas Guskey's Model of Teacher Change</strong> shows that buy-in is a trailing indicator. Belief follows the observation of positive student outcomes. In tandem, Deci & Ryan's <strong>Self-Determination Theory</strong> suggests that leaders must protect autonomy to build intrinsic desire rather than forcing compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-card glass-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Build the Skill <span class="step-owner">(Professional growth)</span></h3>
+                        <p>Once teachers have space and motivation, invest in practical coaching. Replace generic, all-staff sessions with subject-specific modelling, co-planning, and peer observation. Focus on one or two concrete routines at a time and give teachers a low-stakes experimentation window.</p>
+                        
+                        <div class="theory-anchor">
+                            <button class="theory-anchor-btn" aria-expanded="false">📖 Anchored in Elmore's Instructional Core</button>
+                            <div class="theory-anchor-content">
+                                <p><strong>Richard Elmore's Instructional Core</strong> posits that schools cannot improve practice beyond the skill level of the staff doing the work. Simply declaring a standard without structured coaching and deliberate rehearsal yields no change in the actual classroom relationship.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step-card glass-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Institutionalize the Standard <span class="step-owner">(Equity)</span></h3>
+                        <p>When the practice is functional, fluent, and backed by evidence, formalize it as a baseline. Integrate the standard into department agendas, resource allocations, and review processes. Frame it as a promise to students and families: "Every child here should experience this level of teaching."</p>
+                        
+                        <div class="theory-anchor">
+                            <button class="theory-anchor-btn" aria-expanded="false">📖 Anchored in DuFour's PLC & Robinson's Student Entitlements</button>
+                            <div class="theory-anchor-content">
+                                <p><strong>Richard DuFour</strong> highlights that true accountability is collective, built on peer promises. <strong>Viviane Robinson</strong> argues that effective leadership anchors expectations in student entitlements, shifting obligation from a top-down mandate to a professional responsibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Science of Systems Change Bento Grid -->
+        <section class="section fade-in">
+            <span class="tagline">• THE SCIENCE OF SYSTEMS CHANGE • PIONEERS</span>
+            <h2 class="section-title">The Research DNA of the IRF</h2>
+            <p class="section-subtitle">The framework doesn't rely on advice or opinion. It integrates six foundational bodies of educational and psychological science.</p>
+            
+            <div class="bento-grid">
+                <!-- Guskey Card (Wide) -->
+                <div class="bento-card glass-card bento-wide">
+                    <div class="bento-card-content">
+                        <div class="bento-badge badge-desire">Desire</div>
+                        <div class="bento-header">
+                            <h3>Thomas Guskey</h3>
+                            <span class="bento-theory">Model of Teacher Change</span>
+                        </div>
+                        <blockquote class="bento-quote">"Belief in an initiative's value is a trailing indicator of student success."</blockquote>
+                        <p class="bento-desc">Guskey's research shows that professional attitudes and beliefs change only <em>after</em> leaders support teachers to implement a practice and they witness improvements in student outcomes. Focus on early, low-stakes wins to build authentic desire.</p>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="images/guskey.png" alt="Guskey Model of Teacher Change Graphic">
+                    </div>
+                </div>
+
+                <!-- Elmore Card -->
+                <div class="bento-card glass-card">
+                    <div class="bento-badge badge-ability">Ability</div>
+                    <div class="bento-header">
+                        <h3>Richard Elmore</h3>
+                        <span class="bento-theory">The Instructional Core</span>
+                    </div>
+                    <div class="bento-card-image small-image">
+                        <img src="images/elmore.png" alt="Elmore Instructional Core Graphic">
+                    </div>
+                    <blockquote class="bento-quote">"System coherence requires building capacity."</blockquote>
+                    <p class="bento-desc">Elmore proved that policy modifications are irrelevant unless they directly alter the relationship of the teacher and the student in the presence of content, backed by collective competence.</p>
+                </div>
+
+                <!-- Sweller Card -->
+                <div class="bento-card glass-card">
+                    <div class="bento-badge badge-ability">Ability</div>
+                    <div class="bento-header">
+                        <h3>John Sweller</h3>
+                        <span class="bento-theory">Cognitive Load Theory</span>
+                    </div>
+                    <div class="bento-card-image small-image">
+                        <img src="images/sweller.png" alt="Sweller Cognitive Load Theory Graphic">
+                    </div>
+                    <blockquote class="bento-quote">"Teacher exhaustion is cognitive overload."</blockquote>
+                    <p class="bento-desc">Applying Sweller's cognitive load model to organizations shows that leaders must clear administrative load to create working memory capacity for teachers to learn new methods.</p>
+                </div>
+
+                <!-- Deci & Ryan Card -->
+                <div class="bento-card glass-card">
+                    <div class="bento-badge badge-desire">Desire</div>
+                    <div class="bento-header">
+                        <h3>Deci & Ryan</h3>
+                        <span class="bento-theory">Self-Determination Theory</span>
+                    </div>
+                    <div class="bento-card-image small-image">
+                        <img src="images/deciryan.png" alt="Deci and Ryan Self-Determination Theory Graphic">
+                    </div>
+                    <blockquote class="bento-quote">"Sustainable drive is intrinsic."</blockquote>
+                    <p class="bento-desc">Self-Determination Theory anchors the "Desire" force. Top-down mandates threaten autonomy, triggering identity friction. Sustainable drive is intrinsic, built on professional ownership.</p>
+                </div>
+
+                <!-- DuFour & Robinson Card (Wide) -->
+                <div class="bento-card glass-card bento-wide">
+                    <div class="bento-card-content">
+                        <div class="bento-badge badge-obligation">Obligation</div>
+                        <div class="bento-header">
+                            <h3>DuFour & Robinson</h3>
+                            <span class="bento-theory">Collective Responsibility</span>
+                        </div>
+                        <blockquote class="bento-quote">"Transform top-down compliance into collective professional agreements."</blockquote>
+                        <p class="bento-desc">Combining Richard DuFour's Professional Learning Communities (PLCs) with Viviane Robinson's Student-Centered Leadership, we anchor "Obligation" in student entitlements. Real accountability is built on peer-to-peer promises to students, not administrative threat.</p>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="images/dufour.png" alt="Collective Responsibility Network Graphic">
+                    </div>
+                </div>
+
+                <!-- Fullan Card -->
+                <div class="bento-card glass-card">
+                    <div class="bento-badge badge-obligation">Obligation</div>
+                    <div class="bento-header">
+                        <h3>Michael Fullan</h3>
+                        <span class="bento-theory">Moral Imperative / Coherence</span>
+                    </div>
+                    <div class="bento-card-image small-image">
+                        <img src="images/fullan.png" alt="Fullan Moral Coherence Graphic">
+                    </div>
+                    <blockquote class="bento-quote">"Coherence is a shared depth of understanding."</blockquote>
+                    <p class="bento-desc">Fullan's change leadership proves that moral imperative must be translated into shared, reviewable standards embedded in the institutional design to prevent system drift.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Community CTA Section -->
+        <section class="section fade-in community-section" style="text-align: center; max-width: 800px; margin: 0 auto 8rem auto;">
+            <span class="tagline">• CONTRIBUTE • LIVING MODEL</span>
+            <h2 class="section-title" style="font-size: 2.5rem;">Help Us Refine the Framework</h2>
+            <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">This is a living model. If you have critiques, questions, or examples of how these forces play out in your district, we want to hear from you.</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="mailto:calebchanngaihon@gmail.com?subject=Framework Feedback" class="btn btn-primary">Share Feedback →</a>
+                <a href="#scenarios" class="btn btn-outline">Join Discussion</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Institutional Readiness Framework Playbook <span class="text-accent">•</span> 2026</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
